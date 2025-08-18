@@ -25,13 +25,23 @@ const Contact: React.FC = () => {
         body: JSON.stringify(formData),
       });
 
-      const data = await res.json();
-
       if (!res.ok) {
-        throw new Error(data.error || 'Algo deu errado.');
+        let errorMessage = 'Ocorreu um erro no servidor.';
+        const contentType = res.headers.get('content-type');
+        
+        if (contentType && contentType.indexOf('application/json') !== -1) {
+          const errorData = await res.json();
+          errorMessage = errorData.error || errorMessage;
+        } else {
+          // This case handles server crashes where the response is not JSON (e.g., HTML error page)
+          console.error("Server returned a non-JSON error response.");
+          errorMessage = 'Não foi possível conectar ao servidor. Por favor, tente novamente mais tarde.';
+        }
+        throw new Error(errorMessage);
       }
       
-      setStatus({ submitting: false, info: { error: false, message: 'Obrigado! Sua mensagem foi enviada.' } });
+      const data = await res.json();
+      setStatus({ submitting: false, info: { error: false, message: data.message || 'Obrigado! Sua mensagem foi enviada.' } });
       setFormData({ name: '', email: '', message: '' }); // Reset form
       
     } catch (error) {
@@ -39,6 +49,7 @@ const Contact: React.FC = () => {
       setStatus({ submitting: false, info: { error: true, message: errorMessage } });
     }
   };
+
 
   return (
     <section id="contact" className="py-20 sm:py-28 bg-zinc-800/50 animate-fade-in" style={{ animationDelay: '500ms', opacity: 0 }}>
