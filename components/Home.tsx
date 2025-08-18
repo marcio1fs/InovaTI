@@ -9,7 +9,7 @@ const Home: React.FC = () => {
              <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop" alt="Notebook exibindo código de programação em uma mesa" className="w-full h-full object-cover" />
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight">
-            Alex Doe
+            Marcio Farias
           </h1>
           <p className="mt-4 max-w-2xl text-lg sm:text-xl text-slate-400">
             Desenvolvedor Full-Stack | Transformando Ideias em Soluções Digitais

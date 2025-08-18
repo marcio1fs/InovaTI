@@ -42,7 +42,7 @@ const About: React.FC = () => {
           <div className="lg:col-span-2">
             <h3 className="text-2xl font-bold text-white mb-4">Minha Trajetória</h3>
             <p className="text-slate-400 space-y-4 leading-relaxed">
-              Olá! Sou Alex, um desenvolvedor apaixonado por criar soluções digitais que sejam tanto funcionais quanto esteticamente agradáveis. Com uma base sólida em desenvolvimento full-stack, eu prospero na interseção entre design e engenharia, transformando ideias complexas em experiências de usuário intuitivas.
+              Olá! Sou Marcio, um desenvolvedor apaixonado por criar soluções digitais que sejam tanto funcionais quanto esteticamente agradáveis. Com uma base sólida em desenvolvimento full-stack, eu prospero na interseção entre design e engenharia, transformando ideias complexas em experiências de usuário intuitivas.
               <br/><br/>
               Minha jornada na tecnologia é impulsionada pela curiosidade e pelo desejo contínuo de aprender. Acredito que a melhor tecnologia é aquela que se torna invisível, permitindo que os usuários atinjam seus objetivos sem esforço.
             </p>
